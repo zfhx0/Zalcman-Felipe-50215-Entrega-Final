@@ -1,0 +1,74 @@
+{% extends "aplicacion/index.html" %}
+
+
+
+{% block titulo_pestañas %}
+<title>Lista de Cheques</title>
+{% endblock titulo_pestañas %}
+
+
+{% block titulo %}
+<h1 class="mb-5">Cheques</h1>
+{% endblock titulo %}
+
+
+{% block texto_1 %}
+
+<table>
+    <tr>
+        <td width="200"><h2>Cheques</h2></td>
+        <td>
+            <a
+            href="{% url 'cheques_create' %}"
+            class="btn btn-primary btn-sm"
+            style="--bs-btn-padding-y: 1rem; --bs-btn-padding-x: 1rem; --bs-btn-font-size: 1rem;"
+            ><i class="fa fa-plus fa-lg" title="Create"> </i>
+            </a>
+        </td>        
+    </tr>
+</table>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Banco</th>
+            <th>Fecha</th>
+            <th>Monto</th>
+            <th>Numero</th>
+            <th>Pertenencia(User Id)</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for u in Cheques_list %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.banco }}</td>
+            <td>{{ u.fecha }}</td>
+            <td>{{ u.monto }}</td>
+            <td>{{ u.numero }}</td>
+            <td>{{ u.pertenencia }}</td>
+            <td>
+                <a
+                  href="{% url 'cheques_update' u.id %}"
+                  class="btn btn-primary"
+                  style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                </a>
+                <a
+                  href="{% url 'cheque_delete' u.id %}"
+                  class="btn btn-danger"
+                  style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;"
+                  ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                </a>                
+            </td>  
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock texto_1 %}
+
+
+{% block texto_2 %}
+
+{% endblock texto_2 %}

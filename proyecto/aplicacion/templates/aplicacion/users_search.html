@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados de búsqueda</title>
+</head>
+<body>
+    <h1>Resultados de búsqueda</h1>
+    <ul>
+        {% if buscar %}
+            {% for u in User_list %}
+            <tr>
+                <td>{{ u.id }}</td>
+                <td>{{ u.nombre }}</td>
+                <td>{{ u.apellido }}</td>
+                <td>{{ u.email }}</td>
+                <td>{{ u.dni }}</td>
+                <td>
+                    <a
+                    href="{% url 'user_update' u.id %}"
+                    class="btn btn-primary"
+                    style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;"
+                    ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                    </a>
+                    <a
+                    href="{% url 'user_delete' u.id %}"
+                    class="btn btn-danger"
+                    style="--bs-btn-padding-y: .75rem; --bs-btn-padding-x: .75rem; --bs-btn-font-size: .75rem;"
+                    ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                    </a>                
+                </td>  
+            </tr>
+            {% endfor %}
+        {% endif %}
+
+
+
+</body>
+</html>

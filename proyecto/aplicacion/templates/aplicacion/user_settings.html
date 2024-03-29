@@ -1,0 +1,27 @@
+{% extends "aplicacion/index.html" %}
+
+
+
+{% block titulo_pestañas %}
+<title>User Settings</title>
+{% endblock titulo_pestañas %}
+
+
+{% block titulo %}
+<h1 class="mb-5">User Settings</h1>
+{% endblock titulo %}
+
+{% block navbar %}
+<li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+<li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Register</a></li>
+{% endblock navbar %}
+
+
+{% block texto_1 %}
+
+{% endblock texto_1 %}
+
+
+{% block texto_2 %}
+
+{% endblock texto_2 %}

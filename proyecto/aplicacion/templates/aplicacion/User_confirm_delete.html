@@ -1,0 +1,29 @@
+{% extends "aplicacion/index.html" %}
+
+
+{% block titulo %}
+<h1 class="mb-5">Delete User</h1>
+{% endblock titulo %}
+
+{% block titulo_pestañas %}
+<title>Delete Users</title>
+{% endblock titulo_pestañas %}
+
+{% block texto_1 %}
+<h2>User</h2>
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="text-center">
+        <h3>Do you want to delete this user?</h3>
+    </div>
+    <div class="text-center">
+        <input type="submit" class="btn btn-primary btn-block" value="Confirm">
+    </div>
+</form>
+{% endblock texto_1 %}
+
+
+{% block texto_2 %}
+
+{% endblock texto_2 %}
+    

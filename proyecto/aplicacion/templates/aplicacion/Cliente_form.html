@@ -1,0 +1,24 @@
+{% extends "aplicacion/index.html" %}
+
+
+{% block titulo %}
+<h1 class="mb-5">Añadir cliente</h1>
+{% endblock titulo %}
+
+
+{% block texto_1 %}
+    
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Save">
+</form>
+
+{% endblock texto_1 %}
+
+
+{% block texto_2 %}
+    
+{% endblock texto_2 %}
